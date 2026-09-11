@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2563eb"><title>MoneyTracker</title>
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><b>₿ MoneyTracker</b><small>Keuangan Digital</small></div>
+  <button class="nav active" data-page="dashboard">📊 Dashboard</button>
+  <button class="nav" data-page="pemasukan">💰 Pemasukan</button>
+  <button class="nav" data-page="pengeluaran">💸 Pengeluaran</button>
+  <button class="nav" data-page="laporan">📑 Laporan</button>
+  <button class="nav" data-page="pengaturan">⚙️ Pengaturan</button>
+  <small class="note">Data tersimpan di browser.</small>
+</aside>
+<main>
+<header><button id="menu">☰</button><div><h1 id="title">Dashboard</h1><p id="sub">Ringkasan kondisi keuangan</p></div><button class="primary" id="add">＋ Transaksi</button></header>
+<section id="content"></section>
+</main>
+<div class="modal hidden" id="modal"><div class="modalbox">
+  <div class="modalhead"><h2 id="mtitle">Tambah Transaksi</h2><button id="close">×</button></div>
+  <form id="form">
+    <input type="hidden" id="eid">
+    <label>Jenis<select id="type"><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option></select></label>
+    <label>Tanggal<input type="date" id="date" required></label>
+    <label>Nominal<input type="number" id="amount" min="1" required></label>
+    <label>Kategori<select id="category"></select></label>
+    <label>Keterangan<input id="note" maxlength="120"></label>
+    <div class="actions"><button type="button" id="cancel">Batal</button><button class="primary">Simpan</button></div>
+  </form>
+</div></div>
+<script src="assets/app.js"></script>
+</body></html>
